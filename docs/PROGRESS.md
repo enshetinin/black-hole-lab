@@ -107,6 +107,19 @@ Revisión visual real: capturas regeneradas en docs/screenshots (relojes, compar
 Decisión: D26 en docs/14-decisions.md (prevalece sobre los tokens de docs/02).
 ```
 
+## GitHub Pages (2026-10-04)
+
+```text
+Cambios: BASE_PATH → paths.base en vite.config.ts; detección de /about por route.id; .github/workflows/pages.yml;
+  README (sección GitHub Pages); D27.
+Comandos: npm run verify → 0 errores, 130 unit, build OK; npm run test:e2e → 18/18;
+  BASE_PATH=/black-hole-lab npm run build → OK; BASE_PATH inválido → error explícito.
+Prueba local bajo subdirectorio (servidor que imita la resolución de Pages, Chromium): /black-hole-lab/,
+  navegación y recarga de /about, aria-current correcto, 5 fuentes locales cargadas, enlace #scenario restaurado
+  en otra pestaña, 0 respuestas ≥ 400 y 0 errores de consola.
+Pendiente: activar Pages (Source: GitHub Actions) y el primer despliegue real tras el push.
+```
+
 ## Estado inicial (histórico)
 
 Kit preparado 2026-10-03; aplicación no inicializada; valores de referencia generados por el script del kit.

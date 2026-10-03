@@ -24,7 +24,13 @@ npm run build        # genera build/ (index.html, about.html, _app/…)
 npm run preview      # sirve build/ en http://localhost:4173
 ```
 
-`build/` se puede publicar en cualquier hosting estático (no hay que configurar rewrites: todas las rutas se prerenderizan). No se ha desplegado nada.
+`build/` se puede publicar en cualquier hosting estático (no hay que configurar rewrites: todas las rutas se prerenderizan).
+
+### GitHub Pages
+
+`.github/workflows/pages.yml` publica en cada push a `main` (o a mano, desde la pestaña Actions). Ejecuta `npm run verify` y compila con la ruta base que proporciona Pages. Requisito único en el repositorio: **Settings → Pages → Build and deployment → Source: GitHub Actions**. Resultado esperado: `https://<usuario>.github.io/black-hole-lab/`.
+
+Para probar en local un build con subdirectorio: `BASE_PATH=/black-hole-lab npm run build`. Sin `BASE_PATH`, la app se sirve en la raíz (desarrollo, preview y E2E).
 
 ## Scripts
 

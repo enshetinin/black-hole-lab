@@ -4,7 +4,7 @@
 	import { page } from '$app/state';
 
 	let { children } = $props();
-	const onAbout = $derived(page.url.pathname.startsWith('/about'));
+	const onAbout = $derived(page.route.id === '/about');
 </script>
 
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
