@@ -1,0 +1,406 @@
+/*
+ * Fundamentos visuales: Yev Design v0.2, dialecto de aplicación.
+ * Tinta cálida, papel, Yev Signal como tinta escasa (posición del observador y ubicación actual),
+ * colores de datos y semánticos separados de la marca. Contrastes en tests/unit/contrast.test.ts.
+ */
+@import '@fontsource/atkinson-hyperlegible-next/latin-400.css';
+@import '@fontsource/atkinson-hyperlegible-next/latin-500.css';
+@import '@fontsource/atkinson-hyperlegible-next/latin-700.css';
+@import '@fontsource/atkinson-hyperlegible-mono/latin-400.css';
+@import '@fontsource/newsreader/latin-400.css';
+@import '@fontsource/newsreader/latin-400-italic.css';
+
+:root {
+	/* Primitivos */
+	--yev-ink: #11100e;
+	--yev-paper: #f2efe8;
+	--yev-signal: #ff4d1f;
+
+	/* Semánticos de superficie */
+	--bg: var(--yev-ink);
+	--scene-bg: #0c0b0a;
+	--surface: #171511;
+	--surface-raised: #211e1a;
+	--text: var(--yev-paper);
+	--muted: #a49e94;
+	--line: #2e2a25;
+	--control-line: #857e74;
+	--focus: var(--yev-paper);
+	--signal: var(--yev-signal);
+
+	/* Colores de datos (física), independientes de la marca */
+	--data-gr: #ffb45c;
+	--data-newton: #aebbff;
+	--data-photon: #f2efe8;
+	--data-isco: #8fd0d8;
+	--data-disk: #e0a060;
+
+	/* Semánticos de estado */
+	--warning: #ffd17b;
+	--danger: #ff8f97;
+	--success: #8fe3a8;
+	--info: #a8c8f0;
+
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.5rem;
+	--space-6: 2rem;
+	--space-7: 3rem;
+	--space-8: 4rem;
+
+	--radius-control: 2px;
+	--radius-surface: 0;
+
+	--font-sans: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+	--font-serif: 'Newsreader', Georgia, serif;
+	--font-mono: 'Atkinson Hyperlegible Mono', ui-monospace, monospace;
+
+	--font-meta: 0.8125rem;
+	--font-ui: 0.9375rem;
+	--font-body: 1rem;
+	--font-lead: 1.375rem;
+
+	--motion-fast: 120ms;
+	--motion-default: 180ms;
+
+	color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-sans);
+	font-size: var(--font-ui);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: 1.2;
+	margin: 0;
+	font-weight: 500;
+	letter-spacing: -0.005em;
+}
+
+p {
+	margin: 0;
+}
+
+/* Enlaces: siempre subrayados; no dependen del color. */
+a {
+	color: var(--text);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	color: inherit;
+}
+
+/* Foco de alto contraste, independiente de Yev Signal. */
+:focus-visible {
+	outline: 2px solid var(--focus);
+	outline-offset: 2px;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.num {
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum' 1;
+}
+
+.mono {
+	font-family: var(--font-mono);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Botones: rectangulares; la jerarquía viene de la inversión papel/tinta, no del naranja. */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	min-height: 44px;
+	padding: 0 var(--space-4);
+	border-radius: var(--radius-control);
+	border: 1px solid var(--control-line);
+	background: transparent;
+	color: var(--text);
+	font-weight: 500;
+	cursor: pointer;
+	transition:
+		background var(--motion-fast),
+		border-color var(--motion-fast);
+	white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) {
+	background: var(--surface-raised);
+	border-color: var(--text);
+}
+
+.btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.btn-primary {
+	background: var(--yev-paper);
+	border-color: var(--yev-paper);
+	color: var(--yev-ink);
+}
+
+.btn-ghost:hover:not(:disabled) {
+	background: transparent;
+	border-color: transparent;
+	text-decoration-thickness: 2px;
+}
+
+.btn-primary:hover:not(:disabled) {
+	background: #ffffff;
+	border-color: #ffffff;
+}
+
+.btn-small {
+	min-height: 36px;
+	padding: 0 var(--space-3);
+	font-size: 0.875rem;
+}
+
+.btn-ghost {
+	border-color: transparent;
+	padding-inline: 0;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.btn svg {
+	width: 18px;
+	height: 18px;
+	flex: none;
+}
+
+/* Campos */
+.field-label {
+	display: block;
+	font-size: var(--font-meta);
+	color: var(--muted);
+	margin-bottom: var(--space-1);
+}
+
+.input {
+	width: 100%;
+	min-height: 40px;
+	padding: 0 var(--space-3);
+	border-radius: var(--radius-control);
+	border: 1px solid var(--control-line);
+	background: var(--scene-bg);
+	font-variant-numeric: tabular-nums;
+}
+
+.input:focus-visible {
+	outline-offset: 0;
+	border-color: var(--focus);
+}
+
+.input[aria-invalid='true'] {
+	border-color: var(--danger);
+	border-width: 2px;
+}
+
+.field-error {
+	color: var(--danger);
+	font-size: var(--font-meta);
+	margin-top: var(--space-1);
+}
+
+input[type='range'] {
+	width: 100%;
+	accent-color: var(--yev-paper);
+	min-height: 32px;
+	margin: 0;
+	cursor: pointer;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	accent-color: var(--yev-paper);
+	width: 18px;
+	height: 18px;
+	margin: 0;
+}
+
+/* Grupos de controles: el espacio agrupa; sin cajas. */
+.group {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: var(--space-2);
+	min-width: 0;
+}
+
+.group > legend,
+.section-label {
+	font-size: var(--font-ui);
+	font-weight: 500;
+	margin-bottom: var(--space-2);
+	padding: 0;
+}
+
+.hint {
+	font-size: var(--font-meta);
+	color: var(--muted);
+}
+
+/* Mensajes: texto con una marca lateral semántica, no cajas de color. */
+.message {
+	font-size: 0.875rem;
+	padding: var(--space-1) 0 var(--space-1) var(--space-3);
+	border-left: 3px solid var(--control-line);
+}
+
+.message[data-tone='warning'] {
+	border-left-color: var(--warning);
+}
+
+.message[data-tone='danger'] {
+	border-left-color: var(--danger);
+}
+
+.message[data-tone='success'] {
+	border-left-color: var(--success);
+}
+
+.message[data-tone='info'] {
+	border-left-color: var(--info);
+}
+
+/* Control segmentado (radios nativos): seleccionado = inversión papel/tinta y peso. */
+.segmented {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border: 1px solid var(--control-line);
+	border-radius: var(--radius-control);
+}
+
+.segmented.two {
+	grid-template-columns: 1fr 1fr;
+}
+
+.segmented label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 40px;
+	padding: 0 var(--space-2);
+	cursor: pointer;
+	font-size: 0.875rem;
+	color: var(--muted);
+}
+
+.segmented label + label {
+	border-left: 1px solid var(--control-line);
+}
+
+.segmented input {
+	position: absolute;
+	opacity: 0;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	cursor: pointer;
+}
+
+.segmented label:has(input:focus-visible) {
+	outline: 2px solid var(--focus);
+	outline-offset: 2px;
+	z-index: 1;
+}
+
+.segmented label.active {
+	background: var(--yev-paper);
+	color: var(--yev-ink);
+	font-weight: 500;
+}
+
+/* Bloques plegables con una única regla superior. */
+details.fold {
+	border-top: 1px solid var(--line);
+}
+
+details.fold > summary {
+	cursor: pointer;
+	padding: var(--space-3) 0;
+	font-weight: 500;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+details.fold > summary::marker {
+	content: '';
+}
+
+details.fold > summary::before {
+	content: '+';
+	font-family: var(--font-mono);
+	width: 1ch;
+}
+
+details.fold[open] > summary::before {
+	content: '−';
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+}

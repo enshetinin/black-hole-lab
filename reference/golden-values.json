@@ -1,0 +1,409 @@
+{
+  "referenceVersion": 1,
+  "units": {
+    "length": "Schwarzschild radii",
+    "coordinateTime": "rs/c",
+    "massiveParameter": "proper time in rs/c",
+    "photonParameter": "affine, local initial energy normalized to 1"
+  },
+  "constantsSI": {
+    "G": 6.6743e-11,
+    "c": 299792458.0,
+    "solarMassKg": 1.98847e+30
+  },
+  "criticalImpactParameterRs": 2.598076211353316,
+  "captureCutoffRs": 1.01,
+  "masses": [
+    {
+      "massSolar": 1,
+      "radiusMeters": 2953.3393820668784,
+      "radiusKm": 2.9533393820668783,
+      "timeScaleSeconds": 9.851279787922078e-06
+    },
+    {
+      "massSolar": 3,
+      "radiusMeters": 8860.018146200635,
+      "radiusKm": 8.860018146200634,
+      "timeScaleSeconds": 2.9553839363766232e-05
+    },
+    {
+      "massSolar": 10,
+      "radiusMeters": 29533.393820668785,
+      "radiusKm": 29.533393820668785,
+      "timeScaleSeconds": 9.851279787922078e-05
+    },
+    {
+      "massSolar": 20,
+      "radiusMeters": 59066.78764133757,
+      "radiusKm": 59.06678764133757,
+      "timeScaleSeconds": 0.00019702559575844155
+    },
+    {
+      "massSolar": 100,
+      "radiusMeters": 295333.93820668786,
+      "radiusKm": 295.33393820668783,
+      "timeScaleSeconds": 0.0009851279787922078
+    }
+  ],
+  "clocks": [
+    {
+      "radiusRs": 1.01,
+      "localPerReference": 0.09950371902099896,
+      "referencePerLocal": 10.049875621120886,
+      "localAfter60ReferenceSeconds": 5.970223141259938
+    },
+    {
+      "radiusRs": 1.1,
+      "localPerReference": 0.3015113445777637,
+      "referencePerLocal": 3.3166247903553994,
+      "localAfter60ReferenceSeconds": 18.090680674665823
+    },
+    {
+      "radiusRs": 1.5,
+      "localPerReference": 0.5773502691896258,
+      "referencePerLocal": 1.732050807568877,
+      "localAfter60ReferenceSeconds": 34.64101615137755
+    },
+    {
+      "radiusRs": 2,
+      "localPerReference": 0.7071067811865476,
+      "referencePerLocal": 1.414213562373095,
+      "localAfter60ReferenceSeconds": 42.42640687119285
+    },
+    {
+      "radiusRs": 3,
+      "localPerReference": 0.816496580927726,
+      "referencePerLocal": 1.224744871391589,
+      "localAfter60ReferenceSeconds": 48.98979485566356
+    },
+    {
+      "radiusRs": 4,
+      "localPerReference": 0.8660254037844386,
+      "referencePerLocal": 1.1547005383792517,
+      "localAfter60ReferenceSeconds": 51.96152422706631
+    },
+    {
+      "radiusRs": 6,
+      "localPerReference": 0.9128709291752769,
+      "referencePerLocal": 1.0954451150103321,
+      "localAfter60ReferenceSeconds": 54.772255750516614
+    },
+    {
+      "radiusRs": 20,
+      "localPerReference": 0.9746794344808963,
+      "referencePerLocal": 1.0259783520851542,
+      "localAfter60ReferenceSeconds": 58.48076606885378
+    }
+  ],
+  "circularOrbits": [
+    {
+      "radiusRs": 2,
+      "localSpeedC": 0.7071067811865475,
+      "energy": 1.0,
+      "angularMomentum": 1.9999999999999996,
+      "properPerCoordinateTime": 0.5,
+      "coordinatePeriod": 25.132741228718345,
+      "newtonCircularSpeedC": 0.5,
+      "stability": "unstable"
+    },
+    {
+      "radiusRs": 3,
+      "localSpeedC": 0.5,
+      "energy": 0.9428090415820635,
+      "angularMomentum": 1.7320508075688776,
+      "properPerCoordinateTime": 0.7071067811865476,
+      "coordinatePeriod": 46.17179388582711,
+      "newtonCircularSpeedC": 0.4082482904638631,
+      "stability": "marginal"
+    },
+    {
+      "radiusRs": 6,
+      "localSpeedC": 0.31622776601683794,
+      "energy": 0.9622504486493764,
+      "angularMomentum": 2.0,
+      "properPerCoordinateTime": 0.8660254037844386,
+      "coordinatePeriod": 130.59355422486368,
+      "newtonCircularSpeedC": 0.2886751345948129,
+      "stability": "stable"
+    },
+    {
+      "radiusRs": 10,
+      "localSpeedC": 0.23570226039551587,
+      "energy": 0.9761870601839528,
+      "angularMomentum": 2.4253562503633304,
+      "properPerCoordinateTime": 0.9219544457292888,
+      "coordinatePeriod": 280.99258924162905,
+      "newtonCircularSpeedC": 0.22360679774997896,
+      "stability": "stable"
+    }
+  ],
+  "trajectories": [
+    {
+      "name": "photon-B-2.4",
+      "energy": 0.9574271077563381,
+      "angularMomentum": 2.2978250586152145,
+      "kappa": 0,
+      "initialState": {
+        "radiusRs": 12,
+        "radialDerivative": -0.9397103572673633,
+        "azimuthRad": 3.141592653589793,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.004,
+      "lambdaMax": 300,
+      "parameterReached": 13.883393052028943,
+      "steps": 3476,
+      "termination": "captured-at-cutoff",
+      "finalState": {
+        "radiusRs": 1.0099999999999951,
+        "radialDerivative": -0.9302792630935257,
+        "azimuthRad": 6.778317518002889,
+        "coordinateTime": 23.52726639134711
+      },
+      "minRadiusRs": 1.0099999999999951,
+      "maxConstraintResidual": 4.857222402065986e-10,
+      "pericenters": [],
+      "impactParameterRs": 2.4,
+      "localEmissionAngleRad": 2.9489173030227773
+    },
+    {
+      "name": "photon-B-3",
+      "energy": 0.9574271077563381,
+      "angularMomentum": 2.872281323269018,
+      "kappa": 0,
+      "initialState": {
+        "radiusRs": 12,
+        "radialDerivative": -0.929596313221796,
+        "azimuthRad": 3.141592653589793,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.004,
+      "lambdaMax": 300,
+      "parameterReached": 26.57576540986888,
+      "steps": 6644,
+      "termination": "outgoing-at-emitter-radius",
+      "finalState": {
+        "radiusRs": 12.00000000000001,
+        "radialDerivative": 0.9295963132217947,
+        "azimuthRad": 7.497559418135031,
+        "coordinateTime": 32.982333394836736
+      },
+      "minRadiusRs": 2.226681598583287,
+      "maxConstraintResidual": 1.2212453270876722e-14,
+      "pericenters": [
+        {
+          "coordinateTime": 16.4911666974118,
+          "azimuthRad": 5.319576035881718,
+          "radiusRs": 2.226681652438493
+        }
+      ],
+      "impactParameterRs": 3.0,
+      "localEmissionAngleRad": 2.899889336951746
+    },
+    {
+      "name": "photon-B-2.59781640373",
+      "energy": 0.9574271077563381,
+      "angularMomentum": 2.487219845907277,
+      "kappa": 0,
+      "initialState": {
+        "radiusRs": 12,
+        "radialDerivative": -0.9366357472591037,
+        "azimuthRad": 3.141592653589793,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.004,
+      "lambdaMax": 300,
+      "parameterReached": 20.08544421535359,
+      "steps": 5027,
+      "termination": "captured-at-cutoff",
+      "finalState": {
+        "radiusRs": 1.0100000000000056,
+        "radialDerivative": -0.9255395250042657,
+        "azimuthRad": 13.531717868329194,
+        "coordinateTime": 40.86463870018861
+      },
+      "minRadiusRs": 1.0100000000000056,
+      "maxConstraintResidual": 6.289828657912722e-10,
+      "pericenters": [],
+      "impactParameterRs": 2.597816403732181,
+      "localEmissionAngleRad": 2.932810841026772
+    },
+    {
+      "name": "photon-B-2.59833601897",
+      "energy": 0.9574271077563381,
+      "angularMomentum": 2.487717339625827,
+      "kappa": 0,
+      "initialState": {
+        "radiusRs": 12,
+        "radialDerivative": -0.9366273366901515,
+        "azimuthRad": 3.141592653589793,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.004,
+      "lambdaMax": 300,
+      "parameterReached": 33.0156417532583,
+      "steps": 8254,
+      "termination": "outgoing-at-emitter-radius",
+      "finalState": {
+        "radiusRs": 11.999999999999986,
+        "radialDerivative": 0.9366273366901501,
+        "azimuthRad": 14.657379759923652,
+        "coordinateTime": 51.95369945831819
+      },
+      "minRadiusRs": 1.5123814510881541,
+      "maxConstraintResidual": 1.1257661469699087e-13,
+      "pericenters": [
+        {
+          "coordinateTime": 25.976849730524577,
+          "azimuthRad": 8.89948620728243,
+          "radiusRs": 1.5123814558652116
+        }
+      ],
+      "impactParameterRs": 2.598336018974451,
+      "localEmissionAngleRad": 2.9327684627496997
+    },
+    {
+      "name": "infall",
+      "energy": 0.9128709291752769,
+      "angularMomentum": 0.0,
+      "kappa": 1,
+      "initialState": {
+        "radiusRs": 6,
+        "radialDerivative": 0.0,
+        "azimuthRad": 0.0,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.01,
+      "lambdaMax": 80,
+      "parameterReached": 22.371567980637895,
+      "steps": 2250,
+      "termination": "captured-at-cutoff",
+      "finalState": {
+        "radiusRs": 1.0100000000000018,
+        "radialDerivative": -0.9074317293042028,
+        "azimuthRad": 0.0,
+        "coordinateTime": 31.369630614526653
+      },
+      "minRadiusRs": 1.0100000000000018,
+      "maxConstraintResidual": 1.1369427621588102e-10,
+      "pericenters": []
+    },
+    {
+      "name": "escape",
+      "energy": 1.2782749814122842,
+      "angularMomentum": 0.0,
+      "kappa": 1,
+      "initialState": {
+        "radiusRs": 6,
+        "radialDerivative": 0.8947924869885989,
+        "azimuthRad": 0.0,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.01,
+      "lambdaMax": 60,
+      "parameterReached": 60.0,
+      "steps": 6001,
+      "termination": "parameter-limit",
+      "finalState": {
+        "radiusRs": 55.40302648559153,
+        "radialDerivative": 0.8074877606372379,
+        "azimuthRad": 0.0,
+        "coordinateTime": 80.34102582664607
+      },
+      "minRadiusRs": 6,
+      "maxConstraintResidual": 8.153477892847148e-15,
+      "pericenters": []
+    },
+    {
+      "name": "precession",
+      "energy": 0.9569487529386909,
+      "angularMomentum": 1.8869127060994526,
+      "kappa": 1,
+      "initialState": {
+        "radiusRs": 6,
+        "radialDerivative": 1.7578863408516288e-17,
+        "azimuthRad": 0.0,
+        "coordinateTime": 0.0
+      },
+      "fixedStep": 0.01,
+      "lambdaMax": 400,
+      "parameterReached": 400.0,
+      "steps": 40001,
+      "termination": "parameter-limit",
+      "finalState": {
+        "radiusRs": 5.982411494819014,
+        "radialDerivative": 0.007308884381755879,
+        "azimuthRad": 29.909891018761215,
+        "coordinateTime": 477.44441839237237
+      },
+      "minRadiusRs": 4.18756779321858,
+      "maxConstraintResidual": 4.440892098500626e-16,
+      "pericenters": [
+        {
+          "coordinateTime": 80.4938474267227,
+          "azimuthRad": 5.027037827123195,
+          "radiusRs": 4.187567810177924
+        },
+        {
+          "coordinateTime": 241.48154228050862,
+          "azimuthRad": 15.081113481391789,
+          "radiusRs": 4.187567809483922
+        },
+        {
+          "coordinateTime": 402.46923713395665,
+          "azimuthRad": 25.135189135638356,
+          "radiusRs": 4.187567810842938
+        }
+      ]
+    }
+  ],
+  "newtonianTrajectories": [
+    {
+      "name": "circular-ten-turns",
+      "initialRadiusRs": 6,
+      "initialTangentialCoordinateSpeedC": 0.2886751345948129,
+      "fixedStep": 0.01,
+      "coordinateDuration": 1305.935542248637,
+      "steps": 130594,
+      "finalState": {
+        "xRs": 5.999999999929824,
+        "yRs": -2.9088568053271732e-05,
+        "vxC": 1.3995212754232354e-06,
+        "vyC": 0.2886751345914073
+      },
+      "minRadiusRs": 6,
+      "maxRadiusRs": 6.000000694444457,
+      "maxRelativeEnergyError": 4.729550084903169e-14,
+      "maxRelativeAngularMomentumError": 1.999881193838906e-14
+    },
+    {
+      "name": "same-coordinate-precession-comparison",
+      "initialRadiusRs": 6,
+      "initialTangentialCoordinateSpeedC": 0.27386127875258304,
+      "fixedStep": 0.01,
+      "coordinateDuration": 400,
+      "steps": 40001,
+      "finalState": {
+        "xRs": -4.759305999692843,
+        "yRs": -1.2631214624762956,
+        "vxC": 0.0780564212767212,
+        "vyC": -0.324537428695792
+      },
+      "minRadiusRs": 4.909091637733758,
+      "maxRadiusRs": 6,
+      "maxRelativeEnergyError": 3.293040219297761e-08,
+      "maxRelativeAngularMomentumError": 1.8783354006307743e-14
+    }
+  ],
+  "trajectoryComparisonTolerance": {
+    "absoluteRadius": 0.001,
+    "absoluteAzimuth": 0.002,
+    "absoluteCoordinateTime": 0.03
+  },
+  "notes": [
+    "Trajectory terminal events are refined by bisection with RK4 substeps; pericenters use linear interpolation and are approximate.",
+    "Analytic values are independent of integrator.",
+    "Reference h is fixed; app should use adaptive error control and convergence tests.",
+    "No app tests have run: the application is not implemented in this kit."
+  ]
+}

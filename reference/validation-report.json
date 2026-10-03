@@ -1,0 +1,11 @@
+{
+  "assertionsPassed": 57,
+  "circularTenTurnsFinalRadiusRs": 6.0,
+  "circularTenTurnsConstraintResidual": 1.1102230246251565e-16,
+  "precessionAdvanceRadBetweenFirstTwoPericenters": 3.770890347089008,
+  "convergenceRadiusErrorCoarse": 1.1641354547009541e-11,
+  "convergenceRadiusErrorMedium": 9.814371537686384e-13,
+  "newtonCircularMaxRelativeEnergyError": 4.729550084903169e-14,
+  "newtonCircularMaxRelativeAngularMomentumError": 1.999881193838906e-14,
+  "scope": "Independent kit reference only; not the future Svelte application"
+}
